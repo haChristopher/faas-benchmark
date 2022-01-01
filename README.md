@@ -6,8 +6,15 @@ Benchmark of Kubeless
 
 Prerequisites:
 - Install gcloud cli: https://cloud.google.com/sdk/docs/install
-- Install kubectl: https://kubernetes.io/de/docs/tasks/tools/install-kubectl/
+- Install arkade: 
+```
+curl -sLS https://get.arkade.dev | sudo sh
+```
 - Install Jquery (Remove this)
+- Install faas-cli: 
+```
+brew install faas-cli
+```
 
 Alternative install kubectl over gcloud cli:
 ```
@@ -21,12 +28,22 @@ gcloud components install kubectl
 - Activate Kubelesst API: https://console.cloud.google.com/apis/library/container.googleapis.com?project=csb-kubeless-benchmark
 
 
-## Kubeless Setup
+## Openfaas Setup
+
+Check if deployment was succesfull:
+```
+# Forward the gateway to your machine
+kubectl rollout status -n openfaas deploy/gateway
+kubectl port-forward -n openfaas svc/gateway 8080:8080 &
+
+# If basic auth is enabled, you can now log into your gateway:
+PASSWORD=$(kubectl get secret -n openfaas basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode; echo)
+echo -n $PASSWORD | faas-cli login --username admin --password-stdin
+
+faas-cli store deploy figlet
+faas-cli list
+```
 
 
-
-#### Script
-- create cluster
-- clusterrole binding
-
-
+# Ideas
+- use docker container with as setup enviroment with all needed libraries
