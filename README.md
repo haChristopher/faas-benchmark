@@ -16,9 +16,20 @@ curl -sLS https://get.arkade.dev | sudo sh
 brew install faas-cli
 ```
 
+- Install maven: 
+```
+brew install maven
+```
+
 Alternative install kubectl over gcloud cli:
 ```
 gcloud components install kubectl
+```
+
+Terraform
+```
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
 ```
 
 
@@ -47,3 +58,4 @@ faas-cli list
 
 # Ideas
 - use docker container with as setup enviroment with all needed libraries
+- python cli for execution (python as glue code)

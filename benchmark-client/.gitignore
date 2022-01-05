@@ -1,0 +1,5 @@
+# Java and Eclipse 
+/target/
+.settings
+.classpath
+.project
