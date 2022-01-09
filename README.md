@@ -32,6 +32,12 @@ brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 ```
 
+## Terraform
+
+```
+terraform init
+```
+
 
 ## GKE
 - create project (copy ID to config)
