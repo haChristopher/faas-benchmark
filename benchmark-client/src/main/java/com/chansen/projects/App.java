@@ -24,7 +24,7 @@ public class App
         
         int maxPoolSize = Integer.parseInt(prop.getProperty("MaxThreadPoolSize"));
         
-        Runnable r1 = new HTTPRunner(prop.getProperty("endpoint"));
+        Runnable r1 = new HTTPRunner(prop.getProperty("Endpoint"));
         
         ExecutorService pool = Executors.newFixedThreadPool(maxPoolSize);
         
@@ -32,7 +32,7 @@ public class App
         	pool.execute(r1); 
 		}
         
-        pool.awaitTermination(1000, TimeUnit.SECONDS);
+        pool.awaitTermination(5, TimeUnit.SECONDS);
           
         pool.shutdown();  
     }

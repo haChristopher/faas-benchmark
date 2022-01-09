@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM hashicorp/terraform
 
 RUN curl -SL https://cli.openfaas.com | sh
 
