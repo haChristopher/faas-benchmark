@@ -1,0 +1,10 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  pysimple:
+    lang: {PLACEHOLDER_LANG}
+    handler: {PLACEHOLDER_HANDLER}
+    image: {PLACEHOLDER_IMAGE}
+

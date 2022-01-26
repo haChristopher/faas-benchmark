@@ -1,0 +1,10 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  pysimple:
+    lang: python3
+    handler: ./python3/pysimple/
+    image: hachristopher/faas_bench_python3_simple:latest
+

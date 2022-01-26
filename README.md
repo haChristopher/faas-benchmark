@@ -1,8 +1,8 @@
-# kubeless-benchmark
-Benchmark of Kubeless
+# OpenFaas Benchmark
+Benchmark of OpenFaas ...
 
 
-# Benchmark Setup for Gcloud
+## Benchmark Setup for Gcloud
 
 Prerequisites:
 - Install gcloud cli: https://cloud.google.com/sdk/docs/install
@@ -15,6 +15,8 @@ curl -sLS https://get.arkade.dev | sudo sh
 ```
 brew install faas-cli
 ```
+
+- Install Docker
 
 - Install maven: 
 ```
@@ -39,8 +41,19 @@ terraform init
 ```
 
 
+## Dockerhub
+
+All faas images are public on my dockerhub and can be used.
+You can also rebuild them and ad your docker credentials here: 
+
+....
+
+Set rebuild_image Flag
+
+Create your own dockerhub (https://docs.docker.com/docker-hub/)
+
 ## GKE
-- create project (copy ID to config)
+- create project (copy ID to config)docker login
 - create service account (admin) (copy service account keyfile path to config)
 - Activate Kubelesst API: https://console.cloud.google.com/apis/library/container.googleapis.com?project=csb-kubeless-benchmark
 
@@ -62,6 +75,14 @@ faas-cli list
 ```
 
 
-# Ideas
-- use docker container with as setup enviroment with all needed libraries
-- python cli for execution (python as glue code)
+## Function Docker Images
+All docker images for the benchmark are available on DockerHub (https://hub.docker.com/u/hachristopher)
+
+Example:
+```
+docker pull hachristopher/faas_bench_python3_simple
+```
+
+### Adding your own dockerhub 
+... TODO
+

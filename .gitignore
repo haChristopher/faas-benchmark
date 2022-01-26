@@ -19,4 +19,5 @@ crash.*.log
 .terraformrc
 terraform.rc
 
-
+# OS Specific
+.DS_Store
